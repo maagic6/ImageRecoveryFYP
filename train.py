@@ -1,10 +1,12 @@
+# code for training
+
 import torch, torchvision, os
 from torch import nn
 from torch.utils.data import DataLoader
 from diffusers import DDIMScheduler
 from matplotlib import pyplot as plt
 from tqdm.auto import tqdm
-from modules.ClassConditionedUNet import ClassConditionedUNet
+from modules.ConditionalUNet import ConditionalUNet
 
 device = 'mps' if torch.backends.mps.is_available() else 'cuda' if torch.cuda.is_available() else 'cpu'
 
@@ -18,14 +20,14 @@ noise_scheduler = DDIMScheduler(num_train_timesteps=1000, beta_schedule='squared
 train_dataloader = DataLoader(dataset, batch_size=64, shuffle=True)
 
 n_epochs = 10
-net = ClassConditionedUNet().to(device)
+net = ConditionalUNet().to(device)
 loss_fn = nn.MSELoss()
 opt = torch.optim.Adam(net.parameters(), lr=1e-3) 
 
 # losses
 losses = []
 
-# training loop
+# training loop (where x and y should be image + class labels for mnist dataset, and rainy image + ground truth image for our dataset)
 for epoch in range(n_epochs):
     for x, y in tqdm(train_dataloader):
         

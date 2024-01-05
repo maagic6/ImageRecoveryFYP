@@ -1,3 +1,5 @@
+''' IGNORE
+
 import torchvision, os
 from torch.utils.data import DataLoader
 from matplotlib import pyplot as plt
@@ -13,4 +15,4 @@ print('input shape:', x.shape)
 print('labels:', y)
 
 plt.imshow(torchvision.utils.make_grid(x)[0], cmap='Greys');
-plt.show()
+plt.show()'''
