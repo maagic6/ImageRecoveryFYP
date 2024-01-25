@@ -12,3 +12,4 @@ ftfy
 tensorboard
 wandb
 xformers
+peft

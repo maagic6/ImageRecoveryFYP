@@ -13,7 +13,7 @@ class RainyDataset(Dataset):
 
     def __len__(self):
         return len(self.annotations)
-    
+
     def __getitem__(self, index):
         # rename variables later
         img_path1 = os.path.join(self.root_dir, self.annotations.iloc[index, 0])
