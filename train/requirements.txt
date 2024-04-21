@@ -1,0 +1,15 @@
+diffusers==0.24.0
+matplotlib==3.8.2
+pandas==2.1.4
+scipy==1.11.4
+torch==2.1.2
+torchvision==0.16.2
+tqdm==4.66.1
+accelerate>=0.16.0
+transformers>=4.25.1
+datasets
+ftfy
+tensorboard
+wandb
+xformers
+peft

@@ -1,7 +1,6 @@
 import pandas as pd
 import pyarrow as pa
 import pyarrow.parquet as pq
-import io
 from datasets import Features, Image, Value
 
 features = Features({"before": Image(), "instruction": Value("string"), "after": Image()})
